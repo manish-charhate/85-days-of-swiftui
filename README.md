@@ -27,3 +27,17 @@ Repository contains examples, projects and assignments from Paul Hudson's [100 d
 - `Text("Hello, world!")` creates a text view using the string “Hello, world!” Text views are simple pieces of `static text` that get drawn onto the screen, and will automatically wrap across multiple lines as needed.
 
 - `ContentView_Previews` struct conforms to the PreviewProvider protocol. This piece of code won’t actually form part of your final app that goes to the App Store, but is instead specifically for Xcode to use so it can show a preview of your UI design alongside your code.
+
+
+#### Form:
+
+- Forms are scrolling lists of static controls like text and images, but can also include user interactive controls like text fields, toggle switches, buttons, and more. You can create a basic form just by wrapping the view inside Form.
+- You can have as many views inside a form as you want, although if you intend to add more than 10, SwiftUI requires that you place things in groups to avoid problems.
+
+**Tip**: This limit of 10 children inside a parent applies everywhere in SwiftUI.
+
+- If you wanted to have 11 things inside the form you should put some rows inside a **Group**
+- Groups don’t actually change the way your user interface looks, they just let us work around SwiftUI’s limitation of ten child views inside a parent.
+- If you want your form to look different when splitting items into chunks, you should use the Section view instead. This splits your form into discrete visual groups, just like the Settings app does.
+
+
