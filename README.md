@@ -2,7 +2,7 @@
 
 Repository contains examples, projects and assignments from Paul Hudson's [100 days of SwiftUI](https://www.hackingwithswift.com/100/swiftui) starting from day 16
 
-## Day 16
+## Days 16-24
 
 ### Understanding the structure of SwiftUI app
 
