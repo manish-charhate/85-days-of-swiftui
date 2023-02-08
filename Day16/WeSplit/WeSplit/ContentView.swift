@@ -11,6 +11,9 @@ struct ContentView: View {
   
   @State private var tapCount = 0
   @State private var name = ""
+  
+  private let colors = ["Black", "Red", "Blue"]
+  @State private var selectedColor = "Red"
 
   var body: some View {
     NavigationView {
@@ -31,6 +34,13 @@ struct ContentView: View {
           Section("Two way binding example") {
             TextField("Enter your name", text: $name)
             Text("Your name: \(name)")
+          }
+          Section("Picker with ForEach") {
+            Picker("Select Color", selection: $selectedColor) {
+              ForEach(colors, id: \.self) {
+                Text($0)
+              }
+            }
           }
         }
       }
