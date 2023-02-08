@@ -2,7 +2,7 @@
 
 Repository contains examples, projects and assignments from Paul Hudson's [100 days of SwiftUI](https://www.hackingwithswift.com/100/swiftui) starting from day 16
 
-## Days 16-24
+## Day 16
 
 ### Understanding the structure of SwiftUI app
 
@@ -41,3 +41,22 @@ Repository contains examples, projects and assignments from Paul Hudson's [100 d
 - If you want your form to look different when splitting items into chunks, you should use the **Section** view instead. This splits your form into discrete visual groups, just like the Settings app does.
 
 
+#### NavigationView:
+
+- Use a NavigationView to create a navigation-based app in which the user can traverse a collection of views. Users navigate to a destination view by selecting a NavigationLink that you provide.
+- Use function `navigationTitle(_ titleKey) on NavigationView to set navigation title
+- By default, navigation title is shown with large font (same as largeTitle in UIKit). To set normal size title, call function navigationBarTitleDisplayMode with displayMode `.inline` on NavigationView.
+
+
+#### @State - A property wrapper type that can read and write a value managed by SwiftUI.
+
+- SwiftUI’s views are a function of their state. Means that the way your user interface looks – the things people can see and what they can interact with – are determined by the state of your program. For example, they can’t tap Continue until they have entered their name in a text field.
+- `@State`: SwiftUI manages the storage of a property that you declare as state. When the value changes, SwiftUI updates the parts of the view hierarchy that depend on the value. Use state as the single source of truth for a given value stored in a view hierarchy.
+A State instance isn’t the value itself; it’s a means of reading and writing the value.
+
+#### Two-way binding ($)
+
+- Swift differentiates between “show the value of this property here” and “show the value of this property here, but write any changes back to the property.”
+- In the case of TextField example, Swift needs to make sure whatever is in the text is also in the name property, so that it can fulfill its promise that our views are a function of their state.
+- This is what’s called a two-way binding: we bind the text field so that it shows the value of our property, but we also bind it so that any changes to the text field also update the property.
+- In Swift, we mark these two-way bindings with a special symbol `$` so they stand out
