@@ -60,3 +60,10 @@ A State instance isn’t the value itself; it’s a means of reading and writing
 - In the case of TextField example, Swift needs to make sure whatever is in the text is also in the name property, so that it can fulfill its promise that our views are a function of their state.
 - This is what’s called a two-way binding: we bind the text field so that it shows the value of our property, but we also bind it so that any changes to the text field also update the property.
 - In Swift, we mark these two-way bindings with a special symbol `$` so they stand out
+
+
+#### Create several SwiftUI views inside a loop
+
+- SwiftUI gives us a dedicated view type for this purpose, called ForEach. This can loop over arrays and ranges, creating as many views as needed. Even better, ForEach doesn’t get hit by the 10-view limit.
+- ForEach will run a closure once for every item it loops over, passing in the current loop item.
+- ForEach is particularly useful when working with SwiftUI’s `Picker` view, which lets us show various options for users to select from.
