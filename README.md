@@ -53,6 +53,8 @@ Repository contains examples, projects and assignments from Paul Hudson's [100 d
 - SwiftUI’s views are a function of their state. Means that the way your user interface looks – the things people can see and what they can interact with – are determined by the state of your program. For example, they can’t tap Continue until they have entered their name in a text field.
 - `@State`: SwiftUI manages the storage of a property that you declare as state. When the value changes, SwiftUI updates the parts of the view hierarchy that depend on the value. Use state as the single source of truth for a given value stored in a view hierarchy.
 A State instance isn’t the value itself; it’s a means of reading and writing the value.
+- Properties marked with @State automatically watches for changes in the value.
+- When an @State property changes SwiftUI re-invokes the body property (i.e., reloads UI)
 
 #### Two-way binding ($)
 
@@ -67,3 +69,22 @@ A State instance isn’t the value itself; it’s a means of reading and writing
 - SwiftUI gives us a dedicated view type for this purpose, called ForEach. This can loop over arrays and ranges, creating as many views as needed. Even better, ForEach doesn’t get hit by the 10-view limit.
 - ForEach will run a closure once for every item it loops over, passing in the current loop item.
 - ForEach is particularly useful when working with SwiftUI’s `Picker` view, which lets us show various options for users to select from.
+
+## Day 17
+
+#### @FocusState
+
+- A property wrapper type that can read and write a value that SwiftUI updates as the placement of focus within the scene changes.
+
+#### Styles of Picker
+
+- `Picker` view of SwiftUI can be used in different styles.
+- To set/change the style, use `.pickerStyle(style: PickerStyle)` modifier.
+  - `.segmented`: A picker style that presents the options as a group of radio buttons. Use this style when there are two to five options.
+  - `.inline`: A PickerStyle where each option is displayed inline with other views in the current container.
+  - `.wheel`: A picker style that presents the options in a scrollable wheel that shows the selected option and a few neighboring options.
+  - `.navigationLink` (iOS 16): A picker style represented by a navigation link that presents the options by pushing a List-style picker view (On a separate screen).
+  
+#### Spacer
+
+- Wherever you place a spacer it will automatically push other views to one side. That might mean pushing them up, down, left, or right depending on where it’s used
