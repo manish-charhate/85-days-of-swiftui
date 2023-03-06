@@ -88,3 +88,21 @@ A State instance isn’t the value itself; it’s a means of reading and writing
 #### Spacer
 
 - Wherever you place a spacer it will automatically push other views to one side. That might mean pushing them up, down, left, or right depending on where it’s used
+
+
+## Day 20
+
+### background()
+
+- To set background color to a view, use the background() modifier, which can be given required color
+- The background() modifier can also accept materials. These apply a frosted glass effect over whatever comes below them, which allows us to create some beautiful depth effects. Ex - `.background(.ultraThinMaterial)`
+
+### Color
+
+- A representation of a color that adapts to a given context.
+- Colors automatically take up all the space available, but you can also use the frame() modifier to ask for specific sizes.
+- `vibrancy` - set `.foregroundStyle(.secondary)` to `Text` instead of `.foregroundColor(.secondary)` to add vibrancy effect to text.
+
+### ignoresSafeArea()
+
+- If you want your content to go under the safe area, you can use the .ignoresSafeArea() modifier to specify which screen edges you want to run up to, or specify nothing to automatically go edge to edge.
