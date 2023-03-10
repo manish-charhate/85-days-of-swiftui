@@ -106,3 +106,29 @@ A State instance isn’t the value itself; it’s a means of reading and writing
 ### ignoresSafeArea()
 
 - If you want your content to go under the safe area, you can use the .ignoresSafeArea() modifier to specify which screen edges you want to run up to, or specify nothing to automatically go edge to edge.
+
+### Gradients
+
+- `LinearGradient`: a linear gradient goes in one direction. Ex. LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom)
+-  LinearGradient can also be provided with gradient stops, which let you specify both a color and how far along the gradient the color should be used. Ex 
+```
+LinearGradient(
+ gradient: Gradient(
+   stops: [
+        Gradient.Stop(color: .white, location: 0.45),
+        Gradient.Stop(color: .black, location: 0.55),
+     ]
+   ),
+   startPoint: .top,
+   endPoint: .bottom
+ )
+```
+- `RadialGradient`: As an alternative, radial gradients move outward in a circle shape, so instead of specifying a direction we specify a start and end radius
+```
+RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 20, endRadius: 200)
+```
+
+- `AngularGradient`: This cycles colors around a circle rather than radiating outward, and can create some beautiful effects.
+```
+AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
+```
